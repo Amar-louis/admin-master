@@ -27,16 +27,7 @@
             }
             return deviceIdentifier;
         }
-
-        // async function verifyDeviceIdentifierWithAPI(deviceIdentifier) {
-        //     const response = await fetch(`https://dummytummy123.zapto.org/verifydi?device_identifier=${deviceIdentifier}`, {
-        //         method: 'GET',
-        //     });
-        //     const data = await response.json();
-        //     if(!data.isValid){return data.isValid;}
-        //     return data.devide;
-        // }
-
+        
         (async function() {
             const deviceIdentifier = await getOrSetDeviceIdentifier();
             const linkElement = document.createElement('link');
@@ -116,9 +107,9 @@
     </script>
 </head>
 <body style="margin: 0;">
-    <!-- <div id="splash-screen">
+    <div id="splash-screen">
         <img src="splash.png" alt="Loading..." style="width: 100%; height: 100%;"/>
-    </div> -->
+    </div>
     <div class="home-screen" style="display: none;">
         <img src="back.png" id="home-screen" alt="QR Code" width="100%" usemap="#passimageMap">
     </div>
