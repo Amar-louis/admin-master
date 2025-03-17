@@ -186,11 +186,11 @@
                     return;
                 }
                 
-                let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                document.getElementById('countdown').textContent = `Expires in ${days}d ${hours}h ${minutes}m ${seconds}s`;
+                let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+                let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+                let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+                let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000).toString().padStart(2, '0');
+                document.getElementById('countdown').textContent = `Expires in ${days}:${hours}:${minutes}:${seconds}`;
             }
             
             let countdownInterval = setInterval(updateCountdown, 1000);
