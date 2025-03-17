@@ -107,6 +107,7 @@
         window.onload = function() {
             setTimeout(function() {
                 document.getElementById('on-load').style.display = 'none';
+                document.getElementById('hiddenContent').style.display = 'block';
             }, 5000); // 3000ms = 3 second
         };
         
@@ -119,7 +120,7 @@
     <div class="home-screen" style="display: none;">
         <img src="back.png" id="home-screen" alt="QR Code" width="100%" usemap="#passimageMap">
     </div>
-    <div class="container">
+    <div class="container" id="hiddenContent">
         <div class="square">
             <div class="square-text" id="pass_month_yea">
                 <div class="tex-block-1">One Way</div>
