@@ -56,12 +56,12 @@ body {
     width: 39%;
     aspect-ratio: 1;
     margin-left: 30px;
-    background: linear-gradient(0deg, var(--first) 0%, white 40%, white 60%, var(--first) 100%);
-    border-radius: 1.25vh;
-    display: flex;
+/*     background: linear-gradient(0deg, var(--first) 0%, white 40%, white 60%, var(--first) 100%); */
+    border-radius: 0.75vh;
+/*     display: flex; */
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: left;
 }
 
 .square-text {
@@ -121,14 +121,14 @@ body {
 }
 
 .rectangle-text1 {
-    font-size: 250px;
+    font-size: 200px;
     margin-bottom: -40px;
     margin-top: -25px;
     width: 200px;
 }
 
 .rectangle-text2 {
-    font-size: 78px;
+    font-size: 65px;
 }
 
 
@@ -206,14 +206,16 @@ body {
 }
 
 .bip {
-    margin-top: -10px;
-    margin-bottom: 8px;
+    margin-top: -20px;
+    margin-bottom: 0px;
     font-weight: 100;
     color: red;
-    font-size: 65px;
+    font-size: 85px;
     width: 100%;
     text-align: center;
+    letter-spacing: 2px;
 }
 .rectangle-text3 {
     font-size: 38px;
+    margin-bottom: 10px;
 }
