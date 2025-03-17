@@ -108,7 +108,7 @@
             setTimeout(function() {
                 document.getElementById('on-load').style.display = 'none';
                 document.getElementById('hiddenContent').style.display = 'flex';
-            }, 5000); // 30000ms = 3 second
+            }, 3000); // 3000ms = 3 second
         };
         
     </script>
@@ -201,51 +201,51 @@
         startCountdown(1.5);
 
         // ------
-        function updateMonthAndYear() {
-            var currentDate = new Date();
-            var monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-            var month = monthNames[currentDate.getMonth()];
-            var year = currentDate.getFullYear();
-            var student = "STUDENT";
-            var content = month + "<br>" + year + "<br>" + student;
-            document.getElementById("pass_month_year").innerHTML = content;
-        }
+        // function updateMonthAndYear() {
+        //     var currentDate = new Date();
+        //     var monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+        //     var month = monthNames[currentDate.getMonth()];
+        //     var year = currentDate.getFullYear();
+        //     var student = "STUDENT";
+        //     var content = month + "<br>" + year + "<br>" + student;
+        //     document.getElementById("pass_month_year").innerHTML = content;
+        // }
 
-        function updateCountdown() {
-            const countdown = document.getElementById('countdown');
-            const currentDate = new Date();
-            const currentMonth = currentDate.getMonth();
-            const deadlineDate = new Date(currentDate.getFullYear(), currentMonth + 1, 1, 0, 0, 0); // Deadline is set for the start of next month
+        // function updateCountdown() {
+        //     const countdown = document.getElementById('countdown');
+        //     const currentDate = new Date();
+        //     const currentMonth = currentDate.getMonth();
+        //     const deadlineDate = new Date(currentDate.getFullYear(), currentMonth + 1, 1, 0, 0, 0); // Deadline is set for the start of next month
 
-            const timeRemaining = new Date(deadlineDate - currentDate);
+        //     const timeRemaining = new Date(deadlineDate - currentDate);
 
-            const days = timeRemaining.getUTCDate() - 1;
-            const hours = timeRemaining.getUTCHours();
-            const minutes = timeRemaining.getUTCMinutes();
-            const seconds = timeRemaining.getUTCSeconds();
+        //     const days = timeRemaining.getUTCDate() - 1;
+        //     const hours = timeRemaining.getUTCHours();
+        //     const minutes = timeRemaining.getUTCMinutes();
+        //     const seconds = timeRemaining.getUTCSeconds();
 
-            countdown.textContent = `${days.toString().padStart(2, '0')}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        }
+        //     countdown.textContent = `${days.toString().padStart(2, '0')}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        // }
 
-        function updateDateTime() {
-            const datetime = document.getElementById('datetime');
-            const currentDate = new Date();
-            const options = {
-                weekday: 'short',
-                month: 'short',
-                day: '2-digit',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit'
-            };
-            const dateTimeString = currentDate.toLocaleString('en-US', options);
-            datetime.textContent = dateTimeString.replace(" at", " ");
-        }
-        updateMonthAndYear();
-        updateCountdown();
-        updateDateTime();
-        setInterval(updateCountdown, 1000);
-        setInterval(updateDateTime, 1000);
+        // function updateDateTime() {
+        //     const datetime = document.getElementById('datetime');
+        //     const currentDate = new Date();
+        //     const options = {
+        //         weekday: 'short',
+        //         month: 'short',
+        //         day: '2-digit',
+        //         hour: '2-digit',
+        //         minute: '2-digit',
+        //         second: '2-digit'
+        //     };
+        //     const dateTimeString = currentDate.toLocaleString('en-US', options);
+        //     datetime.textContent = dateTimeString.replace(" at", " ");
+        // }
+        // updateMonthAndYear();
+        // updateCountdown();
+        // updateDateTime();
+        // setInterval(updateCountdown, 1000);
+        // setInterval(updateDateTime, 1000);
         document.getElementById('qr-square').addEventListener('click', toggleView);
     </script>
 
