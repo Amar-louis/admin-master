@@ -229,3 +229,6 @@ body {
     font-size: 73px;
     padding: 15px 0 0 15px;
 }
+.cur-time {
+    font-size: 52px;
+}
