@@ -141,6 +141,7 @@
         <div class="rectangle-text3">**Not Valid for HBLR**</div>
     </div>
     <div class="bottom-container">
+        <div id="clock"></div>
         <div class="datetime" id="datetime"></div>
         <div class="color-strip">
             <div class="color-block red"></div>
@@ -157,6 +158,19 @@
         <area shape="rect" coords="0,280,1290,455" onclick="backtopass()" alt="Clickable Region">
     </map>
     <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateTime, 1000);
+        
+        // Initialize the clock immediately
+        updateTime();
+        
         function updateMonthAndYear() {
             var currentDate = new Date();
             var monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
