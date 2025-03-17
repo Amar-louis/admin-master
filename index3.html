@@ -164,22 +164,27 @@
             const ampm = hours >= 12 ? 'PM' : 'AM';
             hours = hours % 12 || 12; // Convert to 12-hour format
             hours = hours.toString().padStart(2, '0');
-            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds} ${ampm}`;
+            let timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+            document.getElementById('clock').textContent = timeString;
         }
 
         function updateDate() {
             const now = new Date();
-            const options = { weekday: 'long', month: 'short', day: 'numeric', year: 'numeric' };
+            const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
             document.getElementById('date').textContent = now.toLocaleDateString('en-US', options);
         }
+
         function startCountdown(duration) {
-            let endTime = new Date().getTime() + duration * 60 * 60 * 1000; // duration in hours
+            let endTime = localStorage.getItem("endTime") ? parseInt(localStorage.getItem("endTime")) : new Date().getTime() + duration * 60 * 60 * 1000;
+            localStorage.setItem("endTime", endTime); // Store end time in localStorage
+
             function updateCountdown() {
                 let now = new Date().getTime();
                 let timeLeft = endTime - now;
                 
                 if (timeLeft <= 0) {
                     document.getElementById('countdown').textContent = "Expired";
+                    localStorage.removeItem("endTime"); // Clear end time after expiry
                     clearInterval(countdownInterval);
                     return;
                 }
@@ -194,12 +199,14 @@
             let countdownInterval = setInterval(updateCountdown, 1000);
             updateCountdown();
         }
-        
+
+        // Ensure time updates every second
         setInterval(updateTime, 1000);
+        
+        // Initialize date, time, countdown
         updateDate();
         updateTime();
-        startCountdown(1.5);
-
+        startCountdown(1.5)
         // ------
         // function updateMonthAndYear() {
         //     var currentDate = new Date();
