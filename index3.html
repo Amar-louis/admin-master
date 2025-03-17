@@ -174,10 +174,32 @@
             const options = { weekday: 'long', month: 'short', day: 'numeric', year: 'numeric' };
             document.getElementById('date').textContent = now.toLocaleDateString('en-US', options);
         }
+        function startCountdown(duration) {
+            let endTime = new Date().getTime() + duration * 60 * 60 * 1000; // duration in hours
+            function updateCountdown() {
+                let now = new Date().getTime();
+                let timeLeft = endTime - now;
+                
+                if (timeLeft <= 0) {
+                    document.getElementById('countdown').textContent = "Expired";
+                    clearInterval(countdownInterval);
+                    return;
+                }
+                
+                let hours = Math.floor((timeLeft / (1000 * 60 * 60)));
+                let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                document.getElementById('countdown').textContent = `Expires in ${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+            
+            let countdownInterval = setInterval(updateCountdown, 1000);
+            updateCountdown();
+        }
         
         setInterval(updateTime, 1000);
         updateDate();
         updateTime();
+        startCountdown(1.5);
 
         // ------
         function updateMonthAndYear() {
