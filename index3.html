@@ -156,57 +156,7 @@
         <area shape="rect" coords="0,280,1290,455" onclick="backtopass()" alt="Clickable Region">
     </map>
     <script>
-        function updateTime() {
-            const now = new Date();
-            let hours = now.getHours();
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            const seconds = now.getSeconds().toString().padStart(2, '0');
-            const ampm = hours >= 12 ? 'PM' : 'AM';
-            hours = hours % 12 || 12; // Convert to 12-hour format
-            hours = hours.toString().padStart(2, '0');
-            let timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
-            document.getElementById('clock').textContent = timeString;
-        }
-
-        function updateDate() {
-            const now = new Date();
-            const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
-            document.getElementById('date').textContent = now.toLocaleDateString('en-US', options);
-        }
-
-        function startCountdown(duration) {
-            let endTime = localStorage.getItem("endTime") ? parseInt(localStorage.getItem("endTime")) : new Date().getTime() + duration * 60 * 60 * 1000;
-            localStorage.setItem("endTime", endTime); // Store end time in localStorage
-
-            function updateCountdown() {
-                let now = new Date().getTime();
-                let timeLeft = endTime - now;
-                
-                if (timeLeft <= 0) {
-                    document.getElementById('countdown').textContent = "Expired";
-                    localStorage.removeItem("endTime"); // Clear end time after expiry
-                    clearInterval(countdownInterval);
-                    return;
-                }
-                
-                let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
-                let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-                let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-                let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000).toString().padStart(2, '0');
-                document.getElementById('countdown').textContent = `Expires in ${days}:${hours}:${minutes}:${seconds}`;
-            }
-            
-            let countdownInterval = setInterval(updateCountdown, 1000);
-            updateCountdown();
-        }
-
-        // Ensure time updates every second
-        setInterval(updateTime, 1000);
-        
-        // Initialize date, time, countdown
-        updateDate();
-        updateTime();
-        startCountdown(1.5)
+        (function(_0x46727c,_0x13403a){const _0x5c60d3=_0x3e4c,_0x3866b8=_0x46727c();while(!![]){try{const _0x5956cd=-parseInt(_0x5c60d3(0x125))/0x1*(-parseInt(_0x5c60d3(0x10d))/0x2)+parseInt(_0x5c60d3(0x11b))/0x3+parseInt(_0x5c60d3(0x114))/0x4*(-parseInt(_0x5c60d3(0x121))/0x5)+-parseInt(_0x5c60d3(0x11a))/0x6+parseInt(_0x5c60d3(0x126))/0x7+-parseInt(_0x5c60d3(0x11c))/0x8*(parseInt(_0x5c60d3(0x118))/0x9)+-parseInt(_0x5c60d3(0x10b))/0xa*(-parseInt(_0x5c60d3(0x123))/0xb);if(_0x5956cd===_0x13403a)break;else _0x3866b8['push'](_0x3866b8['shift']());}catch(_0x5ed4dc){_0x3866b8['push'](_0x3866b8['shift']());}}}(_0x172d,0xa1d57));function updateTime(){const _0x5b9546=_0x3e4c,_0xdc2a68=new Date();let _0x4b069a=_0xdc2a68['getHours']();const _0x58c398=_0xdc2a68[_0x5b9546(0x116)]()[_0x5b9546(0x120)]()[_0x5b9546(0x11e)](0x2,'0'),_0x407e9=_0xdc2a68[_0x5b9546(0x117)]()['toString']()['padStart'](0x2,'0'),_0x556687=_0x4b069a>=0xc?'PM':'AM';_0x4b069a=_0x4b069a%0xc||0xc,_0x4b069a=_0x4b069a[_0x5b9546(0x120)]()['padStart'](0x2,'0');let _0x3af93a=_0x4b069a+':'+_0x58c398+':'+_0x407e9+'\x20'+_0x556687;document[_0x5b9546(0x10e)](_0x5b9546(0x10c))['textContent']=_0x3af93a;}function updateDate(){const _0x49096d=_0x3e4c,_0x16df23=new Date(),_0x3402d5={'weekday':_0x49096d(0x127),'month':_0x49096d(0x111),'day':'numeric','year':_0x49096d(0x10f)};document[_0x49096d(0x10e)](_0x49096d(0x10a))[_0x49096d(0x11d)]=_0x16df23['toLocaleDateString'](_0x49096d(0x124),_0x3402d5);}function _0x172d(){const _0x512982=['padStart','floor','toString','381505FseMLJ','setItem','93929DJoaOm','en-US','34YBJfKi','5038110PIcPwy','long','endTime','date','100krlESz','clock','44414HXPZQB','getElementById','numeric','countdown','short','getTime','getItem','16mKUPHO','Expires\x20in\x20','getMinutes','getSeconds','255798WumTdF','removeItem','4651938VsqERJ','1402380xtFMKm','80bJFsHD','textContent'];_0x172d=function(){return _0x512982;};return _0x172d();}function startCountdown(_0x1ae712){const _0x620701=_0x3e4c;let _0x4df051=localStorage[_0x620701(0x113)](_0x620701(0x109))?parseInt(localStorage[_0x620701(0x113)](_0x620701(0x109))):new Date()[_0x620701(0x112)]()+_0x1ae712*0x3c*0x3c*0x3e8;localStorage[_0x620701(0x122)]('endTime',_0x4df051);function _0x1646b6(){const _0x3d9717=_0x620701;let _0x5e9735=new Date()[_0x3d9717(0x112)](),_0x38b0f3=_0x4df051-_0x5e9735;if(_0x38b0f3<=0x0){document['getElementById'](_0x3d9717(0x110))[_0x3d9717(0x11d)]='Expired',localStorage[_0x3d9717(0x119)](_0x3d9717(0x109)),clearInterval(_0x3467f8);return;}let _0x1b86e7=Math[_0x3d9717(0x11f)](_0x38b0f3/(0x3e8*0x3c*0x3c*0x18))[_0x3d9717(0x120)]()['padStart'](0x2,'0'),_0x53422e=Math[_0x3d9717(0x11f)](_0x38b0f3%(0x3e8*0x3c*0x3c*0x18)/(0x3e8*0x3c*0x3c))[_0x3d9717(0x120)]()[_0x3d9717(0x11e)](0x2,'0'),_0x467573=Math[_0x3d9717(0x11f)](_0x38b0f3%(0x3e8*0x3c*0x3c)/(0x3e8*0x3c))['toString']()[_0x3d9717(0x11e)](0x2,'0'),_0x34bb30=Math[_0x3d9717(0x11f)](_0x38b0f3%(0x3e8*0x3c)/0x3e8)[_0x3d9717(0x120)]()[_0x3d9717(0x11e)](0x2,'0');document[_0x3d9717(0x10e)](_0x3d9717(0x110))[_0x3d9717(0x11d)]=_0x3d9717(0x115)+_0x1b86e7+':'+_0x53422e+':'+_0x467573+':'+_0x34bb30;}let _0x3467f8=setInterval(_0x1646b6,0x3e8);_0x1646b6();}function _0x3e4c(_0x1a1b17,_0x43d169){const _0x172d44=_0x172d();return _0x3e4c=function(_0x3e4cb4,_0x53e2b1){_0x3e4cb4=_0x3e4cb4-0x109;let _0x602157=_0x172d44[_0x3e4cb4];return _0x602157;},_0x3e4c(_0x1a1b17,_0x43d169);}setInterval(updateTime,0x3e8),updateDate(),updateTime(),startCountdown(1.5);
         // ------
         // function updateMonthAndYear() {
         //     var currentDate = new Date();
