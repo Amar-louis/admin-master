@@ -80,30 +80,30 @@
             }
         }
 
-        function backbutton() {
-            if (document.getElementById('qr-square').classList.contains('enlarged')) {
-                toggleView()
-            }
-            document.querySelector('.home-screen').style.display = 'block';
-            document.querySelector('.container').style.display = 'none';
-            document.querySelector('.bip').style.display = 'none';
-            document.querySelector('.rectangle').style.display = 'none';
-            document.querySelector('.datetime').style.display = 'none';
-            document.querySelector('.color-strip').style.display = 'none';
-            document.querySelector('.expires-text').style.display = 'none';
-            document.body.style.backgroundColor = 'black';
-        }
+        // function backbutton() {
+        //     if (document.getElementById('qr-square').classList.contains('enlarged')) {
+        //         toggleView()
+        //     }
+        //     document.querySelector('.home-screen').style.display = 'block';
+        //     document.querySelector('.container').style.display = 'none';
+        //     document.querySelector('.bip').style.display = 'none';
+        //     document.querySelector('.rectangle').style.display = 'none';
+        //     document.querySelector('.datetime').style.display = 'none';
+        //     document.querySelector('.color-strip').style.display = 'none';
+        //     document.querySelector('.expires-text').style.display = 'none';
+        //     document.body.style.backgroundColor = 'black';
+        // }
 
-        function backtopass() {
-            document.querySelector('.home-screen').style.display = 'none';
-            document.querySelector('.container').style.display = 'flex';
-            document.querySelector('.bip').style.display = 'block';
-            document.querySelector('.rectangle').style.display = 'grid';
-            document.querySelector('.datetime').style.display = 'block';
-            document.querySelector('.color-strip').style.display = 'flex';
-            document.querySelector('.expires-text').style.display = 'block';
-            document.body.style.backgroundColor = 'white';
-        }
+        // function backtopass() {
+        //     document.querySelector('.home-screen').style.display = 'none';
+        //     document.querySelector('.container').style.display = 'flex';
+        //     document.querySelector('.bip').style.display = 'block';
+        //     document.querySelector('.rectangle').style.display = 'grid';
+        //     document.querySelector('.datetime').style.display = 'block';
+        //     document.querySelector('.color-strip').style.display = 'flex';
+        //     document.querySelector('.expires-text').style.display = 'block';
+        //     document.body.style.backgroundColor = 'white';
+        // }
         
     </script>
 </head>
@@ -118,7 +118,7 @@
                 <div class="tex-block-2">1 Adult</div>
             </div>
         </div>
-        <div class="qr-square" id = "qr-squar">
+        <div class="qr-square" id = "qr-square">
             <img class="qr-code" src="your-qr-code-image.png" id="QRCODE" alt="QR Code" width="1280px" height="1280px">
             <div class="tap-to-enlarge">Tap to enlarge</div>
         </div>
