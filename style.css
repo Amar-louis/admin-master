@@ -233,7 +233,9 @@ body {
 .cur-time {
     font-size: 52px;
 }
-text-align: center;
+.new-rec-tex{
+    text-align: center;
     padding-top: 16px;
     position: relative;
     font-size: 38px;
+}
