@@ -12,22 +12,22 @@
     <link rel="stylesheet" href="color.css">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <script>
-        async function getOrSetDeviceIdentifier() {
-            let deviceIdentifier = localStorage.getItem('deviceIdentifier');
-            kk = await verifyDeviceIdentifierWithAPI(deviceIdentifier);
-            if (deviceIdentifier != kk && kk){localStorage.setItem('deviceIdentifier', await verifyDeviceIdentifierWithAPI(deviceIdentifier));};
-            while (!deviceIdentifier || !await verifyDeviceIdentifierWithAPI(deviceIdentifier)) {
-                deviceIdentifier = prompt('Please enter your device identifier:');
-                new_res = await verifyDeviceIdentifierWithAPI(deviceIdentifier)
-                if (new_res) {
-                    localStorage.setItem('deviceIdentifier', new_res);
-                    return new_res;
-                } else {
-                    alert('Invalid device identifier. Please try again.');
-                }
-            }
-            return deviceIdentifier;
-        }
+        // async function getOrSetDeviceIdentifier() {
+        //     let deviceIdentifier = localStorage.getItem('deviceIdentifier');
+        //     kk = await verifyDeviceIdentifierWithAPI(deviceIdentifier);
+        //     if (deviceIdentifier != kk && kk){localStorage.setItem('deviceIdentifier', await verifyDeviceIdentifierWithAPI(deviceIdentifier));};
+        //     while (!deviceIdentifier || !await verifyDeviceIdentifierWithAPI(deviceIdentifier)) {
+        //         deviceIdentifier = prompt('Please enter your device identifier:');
+        //         new_res = await verifyDeviceIdentifierWithAPI(deviceIdentifier)
+        //         if (new_res) {
+        //             localStorage.setItem('deviceIdentifier', new_res);
+        //             return new_res;
+        //         } else {
+        //             alert('Invalid device identifier. Please try again.');
+        //         }
+        //     }
+        //     return deviceIdentifier;
+        // }
         
         (async function() {
             const deviceIdentifier = await getOrSetDeviceIdentifier();
