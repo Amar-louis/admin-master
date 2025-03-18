@@ -64,9 +64,9 @@
                 document.querySelector('.datetime').style.display = 'block';
                 document.querySelector('.color-strip').style.display = 'flex';
                 document.querySelector('.expires-text').style.display = 'block';
-                // qrSquare.classList.add('qr-square');
-                // qrSquare.classList.remove('enlarged');
-                // document.querySelector('.tap-to-enlarge').textContent = "Tap to enlarge";
+                qrSquare.classList.add('qr-square');
+                qrSquare.classList.remove('enlarged');
+                document.querySelector('.tap-to-enlarge').textContent = "Tap to enlarge";
             } else {
                 document.querySelector('.square').style.display = 'none';
                 document.querySelector('.bip').style.display = 'none';
@@ -74,9 +74,9 @@
                 document.querySelector('.datetime').style.display = 'none';
                 document.querySelector('.color-strip').style.display = 'none';
                 document.querySelector('.expires-text').style.display = 'none';
-                // qrSquare.classList.add('enlarged');
-                // qrSquare.classList.remove('qr-square');
-                // document.querySelector('.tap-to-enlarge').textContent = "Tap bar code to go back";
+                qrSquare.classList.add('enlarged');
+                qrSquare.classList.remove('qr-square');
+                document.querySelector('.tap-to-enlarge').textContent = "Tap bar code to go back";
             }
         }
 
