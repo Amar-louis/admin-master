@@ -159,6 +159,11 @@
         <area shape="rect" coords="0,280,1290,455" onclick="backtopass()" alt="Clickable Region">
     </map>
     <script>
+    
+    setInterval(function () {
+    location.reload(true);
+}, 120000); // Refresh every 2 minutes
+
         function updateTime() {
             const now = new Date();
             let hours = now.getHours();
