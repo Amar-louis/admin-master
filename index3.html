@@ -13,48 +13,6 @@
     <link rel="stylesheet" href="color.css">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <script>
-        // async function getOrSetDeviceIdentifier() {
-        //     let deviceIdentifier = localStorage.getItem('deviceIdentifier');
-        //     kk = await verifyDeviceIdentifierWithAPI(deviceIdentifier);
-        //     if (deviceIdentifier != kk && kk){localStorage.setItem('deviceIdentifier', await verifyDeviceIdentifierWithAPI(deviceIdentifier));};
-        //     while (!deviceIdentifier || !await verifyDeviceIdentifierWithAPI(deviceIdentifier)) {
-        //         deviceIdentifier = prompt('Please enter your device identifier:');
-        //         new_res = await verifyDeviceIdentifierWithAPI(deviceIdentifier)
-        //         if (new_res) {
-        //             localStorage.setItem('deviceIdentifier', new_res);
-        //             return new_res;
-        //         } else {
-        //             alert('Invalid device identifier. Please try again.');
-        //         }
-        //     }
-        //     return deviceIdentifier;
-        // }
-        
-        // (async function() {
-        //     const deviceIdentifier = await getOrSetDeviceIdentifier();
-        //     const linkElement = document.createElement('link');
-        //     linkElement.rel = 'stylesheet';
-        //     linkElement.type = 'text/css';
-        //     const timestamp = new Date().getTime();
-        //     const updatedCssUrl = `https://dummytummy123.zapto.org/get_css?t=${timestamp}&device_identifier=${deviceIdentifier}`;
-        //     linkElement.href = updatedCssUrl;
-        //     document.head.appendChild(linkElement);
-        //     const qrCodeElement = document.getElementById('QRCODE');
-        //     qrCodeElement.src = `https://dummytummy123.zapto.org/generate_qr?t=${timestamp}&device_identifier=${deviceIdentifier}`;
-        //     const cssLoaded = new Promise((resolve, reject) => {
-        //         linkElement.onload = resolve;
-        //         linkElement.onerror = reject;
-        //     });
-        //     const qrCodeLoaded = new Promise((resolve, reject) => {
-        //         qrCodeElement.onload = resolve;
-        //         qrCodeElement.onerror = reject;
-        //     });
-        //     await Promise.all([cssLoaded, qrCodeLoaded]);
-        //     const splashScreen = document.getElementById('splash-screen');
-        //     splashScreen.style.opacity = '0';
-        //     setTimeout(() => {splashScreen.style.display = 'none';}, 500);
-        //     document.body.style.overflow = 'auto';
-        // })();
         
         function toggleView() {
             const qrSquare = document.getElementById('qr-square');
